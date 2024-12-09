@@ -10,9 +10,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements FilamentUser {
-	use HasApiTokens, HasFactory, Notifiable;
+	use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
 	/**
 	 * The attributes that are mass assignable.
@@ -50,7 +51,8 @@ class User extends Authenticatable implements FilamentUser {
 		return $this->hasMany(Order::class);
 	}
 
-	public function canAccessPanel(Panel $panel): bool {
-		return $this->email == 'admin@gmail.com';
+	public function canAccessPanel(Panel $panel): bool
+	{
+		return $this->hasAnyRole(['admin', 'super_admin', 'editor']); // เพิ่ม roles ที่ต้องการให้เข้าถึงได้
 	}
 }

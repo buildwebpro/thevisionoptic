@@ -30,7 +30,7 @@ class LatestOrders extends BaseWidget {
 					->searchable(),
 
 				TextColumn::make('grand_total')
-					->money('INR'),
+					->formatStateUsing(fn ($state) => number_format($state, 2) . ' THB'),
 
 				TextColumn::make('status')
 					->badge()

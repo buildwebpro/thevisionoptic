@@ -78,7 +78,7 @@ class ProductResource extends Resource {
 						TextInput::make('price')
 							->numeric()
 							->required()
-							->prefix('INR')
+							->prefix('THB')
 					]),
 
 					Section::make('Associations')->schema([
@@ -128,7 +128,7 @@ class ProductResource extends Resource {
 					->sortable(),
 
 				TextColumn::make('price')
-					->money('INR')
+					->formatStateUsing(fn ($state) => number_format($state, 2) . ' THB')
 					->sortable(),
 
 				IconColumn::make('is_featured')
@@ -148,8 +148,7 @@ class ProductResource extends Resource {
 					->sortable()
 					->toggleable(isToggledHiddenByDefault: true),
 
-				TextColumn::make('updated_at')
-					->dateTime()
+				TextColumn::make('updated_at')					->dateTime()
 					->sortable()
 					->toggleable(isToggledHiddenByDefault: true)
 			])

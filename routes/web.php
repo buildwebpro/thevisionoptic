@@ -15,17 +15,24 @@ use App\Livewire\ProductDetailPage;
 use App\Livewire\ProductsPage;
 use App\Livewire\SuccessPage;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Admin\DashboardPage;
+use App\Livewire\Admin\ProductsPage as AdminProductsPage;
+use App\Livewire\Admin\CategoriesPage as AdminCategoriesPage;
+use App\Livewire\Admin\OrdersPage as AdminOrdersPage;
+use App\Livewire\Admin\OrderDetailPage as AdminOrderDetailPage;
+use App\Livewire\Admin\UsersPage as AdminUsersPage;
+use App\Livewire\Admin\UserDetailPage as AdminUserDetailPage;
+use App\Livewire\Admin\UserCreatePage as AdminUserCreatePage;
+use App\Livewire\Admin\UserEditPage as AdminUserEditPage;
+use App\Livewire\Admin\ProductCreatePage as AdminProductCreatePage;
+use App\Livewire\Admin\ProductEditPage as AdminProductEditPage;
+use App\Livewire\Admin\CategoryCreatePage as AdminCategoryCreatePage;
+use App\Livewire\Admin\CategoryEditPage as AdminCategoryEditPage;
+use App\Livewire\Admin\OrderCreatePage as AdminOrderCreatePage;
+use App\Livewire\Admin\OrderEditPage as AdminOrderEditPage;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+	
+
 
 Route::get('/', HomePage::class);
 Route::get('/categories', CategoriesPage::class);

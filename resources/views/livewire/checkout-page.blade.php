@@ -137,7 +137,7 @@
               Subtotal
             </span>
             <span>
-              {{ Number::currency($grand_total, 'INR') }}
+              {{ Number::currency($grand_total, 'THB') }}
             </span>
           </div>
           <div class="flex justify-between mb-2 font-bold">
@@ -145,7 +145,7 @@
               Taxes
             </span>
             <span>
-              {{ Number::currency(0, 'INR') }}
+              {{ Number::currency(0, 'THB') }}
             </span>
           </div>
           <div class="flex justify-between mb-2 font-bold">
@@ -153,7 +153,7 @@
               Shipping Cost
             </span>
             <span>
-              {{ Number::currency(0, 'INR') }}
+              {{ Number::currency(0, 'THB') }}
             </span>
           </div>
           <hr class="bg-slate-400 my-4 h-1 rounded">
@@ -162,7 +162,7 @@
               Grand Total
             </span>
             <span>
-              {{ Number::currency($grand_total, 'INR') }}
+              {{ Number::currency($grand_total, 'THB') }}
             </span>
           </div>
           </hr>
@@ -193,7 +193,7 @@
                     </p>
                   </div>
                   <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                    {{ Number::currency($ci['total_amount'], 'INR') }}
+                    {{ Number::currency($ci['total_amount'], 'THB') }}
                   </div>
                 </div>
               </li>

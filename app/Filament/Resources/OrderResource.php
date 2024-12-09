@@ -96,12 +96,12 @@ class OrderResource extends Resource {
 
 						Select::make('currency')
 							->options([
-								'inr' => 'INR',
+								'THB' => 'THB',
 								'usd' => 'USD',
 								'eur' => 'EUR',
 								'gbp' => 'GBP'
 							])
-							->default('inr')
+							->default('THB')
 							->required(),
 
 						Select::make('shipping_method')
@@ -169,7 +169,7 @@ class OrderResource extends Resource {
 									$total += $get("items.{$key}.total_amount");
 								}
 								$set('grand_total', $total);
-								return Number::currency($total, 'INR');
+								return number_format($value, 2) . ' THB';
 							}),
 
 						Hidden::make('grand_total')
@@ -190,7 +190,7 @@ class OrderResource extends Resource {
 				TextColumn::make('grand_total')
 					->numeric()
 					->sortable()
-					->money('INR'),
+					->formatStateUsing(fn ($state) => number_format($state, 2) . ' THB'),
 
 				TextColumn::make('payment_method')
 					->searchable()

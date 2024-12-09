@@ -46,6 +46,18 @@ class UserResource extends Resource {
 					->password()
 					->dehydrated(fn ($state) => filled($state))
 					->required(fn (Page $livewire): bool => $livewire instanceof CreateRecord),
+				
+				Forms\Components\Select::make('roles')
+                    ->relationship('roles', 'name')
+                    ->multiple(false)
+                    ->preload()
+                    ->required()
+                    ->afterStateUpdated(function ($state, callable $set) {
+                        // Clear the selection if it's an invalid value
+                        if ($state === null) {
+                            $set('roles', []);
+                        }
+                    })
 			]);
 	}
 

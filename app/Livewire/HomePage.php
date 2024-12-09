@@ -7,7 +7,7 @@ use App\Models\Category;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Title('Home Page - DCodeMania')]
+#[Title('Home Page - Thevisionoptic')]
 class HomePage extends Component {
 	public function render() {
 		$brands = Brand::where('is_active', 1)->get();

@@ -38,7 +38,8 @@
                 {{ $product->name }}
               </h2>
               <p class="inline-block mb-6 text-4xl font-bold text-gray-700 dark:text-gray-400 ">
-                <span>{{ Number::currency($product->price, 'INR') }}</span>
+                <!-- <span>{{ Number::currency($product->price, 'THB') }}</span> -->
+                <span> {{ str_replace('THB', '', Number::currency($product->price, 'THB')) }} THB </span>
                 {{-- <span class="text-base font-normal text-gray-500 line-through dark:text-gray-400">$1800.99</span> --}}
               </p>
               <p class="max-w-md text-gray-700 dark:text-gray-400">

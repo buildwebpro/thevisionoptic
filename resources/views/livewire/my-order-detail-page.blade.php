@@ -164,12 +164,12 @@
                   </div>
                 </td>
                 <td class="py-4">
-                  {{ Number::currency($item->unit_amount, 'INR') }}
+                  {{ Number::currency($item->unit_amount, 'THB') }}
                 </td>
                 <td class="py-4">
                   <span class="text-center w-8">{{ $item->quantity }}</span>
                 </td>
-                <td class="py-4">{{ Number::currency($item->total_amount, 'INR') }}</td>
+                <td class="py-4">{{ Number::currency($item->total_amount, 'THB') }}</td>
               </tr>
             @endforeach
           </tbody>
@@ -195,20 +195,20 @@
         <h2 class="text-lg font-semibold mb-4">Summary</h2>
         <div class="flex justify-between mb-2">
           <span>Subtotal</span>
-          <span>{{ Number::currency($item->order->grand_total, 'INR') }}</span>
+          <span>{{ Number::currency($item->order->grand_total, 'THB') }}</span>
         </div>
         <div class="flex justify-between mb-2">
           <span>Taxes</span>
-          <span>₹0.00</span>
+          <span>฿0.00</span>
         </div>
         <div class="flex justify-between mb-2">
           <span>Shipping</span>
-          <span>₹0.00</span>
+          <span>฿0.00</span>
         </div>
         <hr class="my-2">
         <div class="flex justify-between mb-2">
           <span class="font-semibold">Grand Total</span>
-          <span class="font-semibold">{{ Number::currency($item->order->grand_total, 'INR') }}</span>
+          <span class="font-semibold">{{ Number::currency($item->order->grand_total, 'THB') }}</span>
         </div>
 
       </div>

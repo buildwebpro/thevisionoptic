@@ -52,7 +52,7 @@ class CheckoutPage extends Component {
 		foreach ($cart_items as $item) {
 			$line_items[] = [
 				'price_data' => [
-					'currency' => 'inr',
+					'currency' => 'THB',
 					'unit_amount' => $item['unit_amount'] * 100,
 					'product_data' => [
 						'name' => $item['name'],
@@ -68,7 +68,7 @@ class CheckoutPage extends Component {
 		$order->payment_method = $this->payment_method;
 		$order->payment_status = 'pending';
 		$order->status = 'new';
-		$order->currency = 'inr';
+		$order->currency = 'THB';
 		$order->shipping_amount = 0;
 		$order->shipping_method = 'none';
 		$order->notes = 'Order placed by ' . auth()->user()->name;
